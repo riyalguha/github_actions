@@ -2,8 +2,8 @@
 resource "azurerm_linux_virtual_machine" "mylinuxvm" {
   name = "mylinuxvm-1"
   computer_name = "devlinux-vm1"  # Hostname of the VM
-  resource_group_name = azurerm_resource_group.myrg.name
-  location = azurerm_resource_group.myrg.location
+  resource_group_name = "myrg-1"
+  location = "West Europe"
   size = "Standard_F2"
   admin_username = "azureuser"
   network_interface_ids = [ azurerm_network_interface.myvmnic.id ]
