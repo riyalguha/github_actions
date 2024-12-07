@@ -1,6 +1,7 @@
 resource "random_string" "myrandom" {
   length  = 8
   special = true
+  upper = false
 }
 
 # Create Virtual Network
@@ -25,7 +26,7 @@ resource "azurerm_public_ip" "mypublicip" {
   resource_group_name = var.resource_group_name
   location            = var.resource_group_location
   allocation_method   = "Static"
-  domain_name_label = "app1-vm-${random_string.myrandom.id}"
+  domain_name_label = "app1-vm-${random_string.myrandom.result}"
   tags = {
     environment = "Dev"
   }
