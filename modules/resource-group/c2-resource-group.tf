@@ -8,6 +8,6 @@ output "name" {
   value = azurerm_resource_group.myrg.name
 }
 
-output "resource_group_location" {
+output "location" {
   value = azurerm_resource_group.myrg.location
 }
