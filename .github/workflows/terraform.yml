@@ -16,9 +16,9 @@ jobs:
 
       # Setup Terraform
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v2
+        uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: 3.7.0 # Specify Terraform version
+          terraform_version: "1.1.7" # Specify Terraform version
 
       # Azure Login using Service Principal
       - name: Azure Login
