@@ -42,7 +42,7 @@ variable "resource_group_location" {
 
 output "subnet_id" {
   description = "The VM-NIC ID"
-  value = azurerm_network_interface.subnet_id.id
+  value = azurerm_subnet.mysubnet.id
 }
 output "mypublicip_id" {
   description = "Public IP ID for the Vnet"
