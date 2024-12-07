@@ -12,4 +12,6 @@ module "virtual_machine" {
   source = "./modules/virtual-machine"
   resource_group_name  = module.resource_group.name
   resource_group_location = module.resource_group.location
+  subnet_id = module.virtual_network.subnet_id
+  mypublicip_id = module.virtual_network.mypublicip_id
 }

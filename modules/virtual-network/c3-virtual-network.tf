@@ -30,6 +30,8 @@ resource "azurerm_public_ip" "mypublicip" {
     environment = "Dev"
   }
 }
+
+
 variable "resource_group_name" {
   
 }
@@ -38,7 +40,11 @@ variable "resource_group_location" {
   
 }
 
-# output "NIC_ID" {
-#   description = "The VM-NIC ID"
-#   value = azurerm_network_interface.myvmnic.id
-# }
+output "subnet_id" {
+  description = "The VM-NIC ID"
+  value = azurerm_network_interface.subnet_id.id
+}
+output "mypublicip_id" {
+  description = "Public IP ID for the Vnet"
+  value = azurerm_public_ip.mypublicip.id
+}
