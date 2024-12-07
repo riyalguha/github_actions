@@ -1,3 +1,8 @@
+resource "random_string" "myrandom" {
+  length  = 8
+  special = true
+}
+
 # Create Virtual Network
 resource "azurerm_virtual_network" "myvnet" {
   name                = "myvnet-1"
@@ -25,21 +30,6 @@ resource "azurerm_public_ip" "mypublicip" {
     environment = "Dev"
   }
 }
-
-# Create Network Interface
-resource "azurerm_network_interface" "myvmnic" {
-  name                = "vmnic"
-  location            = var.resource_group_location
-  resource_group_name = var.resource_group_name
-
-  ip_configuration {
-    name                          = "internal"
-    subnet_id                     = azurerm_subnet.mysubnet.id
-    private_ip_address_allocation = "Dynamic"
-    public_ip_address_id = azurerm_public_ip.mypublicip.id 
-  }
-}
-
 variable "resource_group_name" {
   
 }
@@ -47,3 +37,8 @@ variable "resource_group_name" {
 variable "resource_group_location" {
   
 }
+
+# output "NIC_ID" {
+#   description = "The VM-NIC ID"
+#   value = azurerm_network_interface.myvmnic.id
+# }
