@@ -1,0 +1,2 @@
+Will have to add a remote backend to store the tfstate file or else the desired state will not get tracked
+so add a remote backend then create resources and the add terraform destroy and try to destroy the resources

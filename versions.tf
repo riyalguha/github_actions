@@ -11,6 +11,12 @@ terraform {
       version = ">= 3.0"
     }
   }
+  backend "azurerm" {
+  resource_group_name  = "rg-backend"  # The same resource group for your other resources
+  storage_account_name = "statestorage2002"
+  container_name       = "terraform-state"
+  key                  = "terraform.tfstate"
+}
 }
 
 # Provider Block
